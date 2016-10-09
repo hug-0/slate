@@ -61,3 +61,12 @@ Hydrogen Sulfide (H2S) | PPM | Measured in [parts per million](https://en.wikipe
 Temperature | Degrees Celsius | Measured in degrees [Celsius](https://en.wikipedia.org/wiki/Celsius)
 Atmospheric Pressure | Pascal | Measured in [Pascal](https://en.wikipedia.org/wiki/Pascal_(unit))
 Relative Humidity | Percentage | Measured in [partial pressure ratios](https://en.wikipedia.org/wiki/Relative_humidity)
+
+A data type has the following attributes
+
+Attribute | Type | Description |
+-------------- | -------------- | -------------- |
+`id` | `string` | Unique data-type `id` |
+`type` | `string` | The type of data represented, e.g. temperature |
+`si_unit` | `string` | SI unit of the data type, e.g. degrees Celsius |
+`type_id` | `string` | A unique manufacturer string, e.g. TCA |

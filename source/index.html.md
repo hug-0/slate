@@ -5,7 +5,6 @@ language_tabs:
 - shell
 
 toc_footers:
-- <a href='#'>Sign Up for an API Key</a>
 - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -24,8 +23,11 @@ The Volcano API is organized around REST. The API has predictable resource-orien
 There are four top-level API resources
 
 	1. `volcanoes`
+
 	2. `nodes`
+
 	3. `sensors`
+
 	4. `data-types`
 
 that in combination create a virtual representation of a connected volcano. The majority of the data exposed by these resources are data samples collected from the sensors installed inside Volcàn Masaya in Nicaragua, and are represented as time series data.
@@ -34,13 +36,21 @@ To learn more about each individual resource type and the types of data that are
 
 # Base URI
 
-To call an API resource, use the base URI `https://masaya-web.run.aws-usw02-pr.ice.predix.io`.
+To call an API resource, use the base URI <br/>
+
+`https://masaya-web.run.aws-usw02-pr.ice.predix.io`.
 
 # Authentication
 
-The API is open for requests by default, and authentication is only required if `POST`, `PUT` or `PATCH` methods are required, such as when a new volcano is added, or if a new node of sensors is installed at an existing volcano resource.
+The API is open for requests by default, and authentication is only required if `POST`, `PUT` or `DELETE` methods are required, such as when a new volcano is added, or if a new node of sensors is installed at an existing volcano resource.
 
 Bear in mind that _all_ API requests must be made over HTTPS. Any calls made over HTTP will fail.
+
+To enable these types of operations, you must set
+
+Header | Value
+-------------- | --------------
+`x-auth-token` | `38736b4b-4c37-4ca5-887a-af7a0faf318c` |
 
 # Errors
 

@@ -10,6 +10,21 @@ Every node also reports its latest battery life, and its current `status`. The `
 
 Finally, each node have a name, `N1` through `N10` following the scientific team that installed them inside the volcano, and are referred to in the scientific papers the team is creating following the expedition.
 
+A node has the following attributes
+
+Attribute | Type | Description |
+-------------- | -------------- | -------------- |
+`id` | `string` | Unique node `id` |
+`name` | `string` | Name of the node, e.g. `N1` or `N5` |
+`description` | `string` | Short description of the node, such as were it is installed |
+`location` | `array[ number, number ]` | An array containing the GPS coordinates of the node's location inside the volcano `[ longitude, latitude ]` |
+`status` | `string` | Current status of the node. `status` is either `ONLINE` or `OFFLINE`. A node is considered `OFFLINE` when none of its sensors are sending sensory data that can be properly interpreted |
+`created_at` | `date` | The UTC timestamp when the node first came online |
+`updated_at` | `date` | The UTC timestamp when a node last received interpretable data from one of its sensors |
+`volcano_id` | `string` | Unique `id` to the volcano where the node is installed |
+`sensors` | `array[ JSON ]` | An array of sensors that are installed on the node in JSON format |
+
+
 ## [ `/nodes` ] Get All Nodes
 
 > GET All Nodes
@@ -58,9 +73,9 @@ volcano$ curl https://masaya-web.run.aws-usw02-pr.ice.predix.io/nodes
 ]
 ```
 
-This end-point returns all nodes inside the API as an array of JSON objects.
+Returns all nodes inside the API as an array of JSON objects.
 
-## [ `/nodes/{node_id}` ] Get Single Node
+## [ `/nodes/{id}` ] Get Single Node
 
 > GET a Single Node
 
@@ -122,4 +137,4 @@ volcano$ curl https://masaya-web.run.aws-usw02-pr.ice.predix.io/nodes/c147ece0-8
 }
 ```
 
-This end-point returns a single node given its unique `id`.
+Returns a single node given its unique `id`.
